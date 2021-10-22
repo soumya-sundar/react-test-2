@@ -1,0 +1,1774 @@
+[
+  {
+    "Id": 3,
+    "Name": "DiskOthersFreeSpaceMegabytes",
+    "Title": "Disk (others): Free space megabytes",
+    "Notes": "Scores the free disk space across non-system disk(s). A lower score indicates that these disks are running low on space and space may need to be released.",
+    "Normalization": "BoundedRange(10000,1000000)",
+    "Hidden": false,
+    "Unit": "MB",
+    "DataType": "integer",
+    "SourceType": 0,
+    "Type": 1,
+    "Measures": ["DiskOthersFreeSpaceMegabytesScore"],
+    "Children": [],
+    "InvestigationCategories": []
+  },
+  {
+    "Id": 5,
+    "Name": "DiskOthersUsageTimePercent",
+    "Title": "Disk (others): Usage time percent",
+    "Notes": "Scores the percentage of time that non-system disk(s) were servicing requests. A lower score indicates these disk(s) may be excessively busy.",
+    "Normalization": "!BoundedRange(0,20)",
+    "Hidden": false,
+    "Unit": "%",
+    "DataType": "float(1)",
+    "SourceType": 0,
+    "Type": 1,
+    "Measures": ["DiskOthersUsageTimePercentScore"],
+    "Children": [],
+    "InvestigationCategories": []
+  },
+  {
+    "Id": 8,
+    "Name": "DiskSystemFreeSpaceMegabytes",
+    "Title": "Disk (system): Free space megabytes",
+    "Notes": "Scores the free disk space on the system disk. A lower score indicates that this disk is running low on space and space may need to be released.",
+    "Normalization": "BoundedRange(10000,100000)",
+    "Hidden": false,
+    "Unit": "MB",
+    "DataType": "integer",
+    "SourceType": 0,
+    "Type": 1,
+    "Measures": ["DiskSystemFreeSpaceMegabytesScore"],
+    "Children": [],
+    "InvestigationCategories": []
+  },
+  {
+    "Id": 10,
+    "Name": "DiskSystemUsageTimePercent",
+    "Title": "Disk (system): Usage time percent",
+    "Notes": "Scores the percentage of time that the system disk was servicing requests. A lower score indicates this disk may be excessively busy.",
+    "Normalization": "!BoundedRange(1,50)",
+    "Hidden": false,
+    "Unit": "%",
+    "DataType": "float(1)",
+    "SourceType": 0,
+    "Type": 1,
+    "Measures": ["DiskSystemUsageTimePercentScore"],
+    "Children": [],
+    "InvestigationCategories": []
+  },
+  {
+    "Id": 13,
+    "Name": "MemoryUsageMegabytes",
+    "Title": "Memory: Used megabytes",
+    "Notes": "The amount of physical memory in use.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "MB",
+    "DataType": "integer",
+    "SourceType": 0,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": []
+  },
+  {
+    "Id": 15,
+    "Name": "NetworkActiveTcpConnections",
+    "Title": "Network: Active TCP connections",
+    "Notes": "The average number of active (inbound and output) TCP connections.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": null,
+    "DataType": "integer",
+    "SourceType": 0,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["Network"]
+  },
+  {
+    "Id": 16,
+    "Name": "NetworkBytesReceivedPerSecond",
+    "Title": "Network: Bytes received per second",
+    "Notes": "The average number of bytes received per second across all network adapters.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "bytes/sec",
+    "DataType": "integer",
+    "SourceType": 0,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["Network"]
+  },
+  {
+    "Id": 17,
+    "Name": "NetworkBytesSentPerSecond",
+    "Title": "Network: Bytes sent per second",
+    "Notes": "The average number of bytes sent per second across all network adapters.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "bytes/sec",
+    "DataType": "integer",
+    "SourceType": 0,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["Network"]
+  },
+  {
+    "Id": 21,
+    "Name": "ProcessorTimeSeconds",
+    "Title": "Processor: Processor seconds",
+    "Notes": "The average number of CPU seconds (amount of processor work) per second. A value of 1 indicates that a single CPU core was entirely busy for a second.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "secs",
+    "DataType": "float(4)",
+    "SourceType": 0,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": []
+  },
+  {
+    "Id": 37,
+    "Name": "PerformanceAnomalies",
+    "Title": "Device Performance Anomalies",
+    "Notes": "Scores the frequency of general performance anomalies reported for the device. A lower score indicates that this device may need to be investigated.",
+    "Normalization": "!BoundedRange(0,50)",
+    "Hidden": false,
+    "Unit": null,
+    "DataType": "integer",
+    "SourceType": 0,
+    "Type": 1,
+    "Measures": ["PerformanceAnomaliesScore"],
+    "Children": [],
+    "InvestigationCategories": []
+  },
+  {
+    "Id": 40,
+    "Name": "OsPerformanceAnomalies",
+    "Title": "Operating System: Performance Anomalies",
+    "Notes": "Scores the frequency of operating system performance anomalies. A lower score indicates that the operating system on this device may need to be investigated, upgraded or reinstalled.",
+    "Normalization": "!BoundedRange(0,50)",
+    "Hidden": false,
+    "Unit": null,
+    "DataType": "integer",
+    "SourceType": 0,
+    "Type": 1,
+    "Measures": ["OsPerformanceAnomaliesScore"],
+    "Children": [],
+    "InvestigationCategories": []
+  },
+  {
+    "Id": 43,
+    "Name": "SoftwarePerformanceAnomalies",
+    "Title": "Software: Performance Anomalies",
+    "Notes": "Scores the frequency of software performance anomalies. A lower score indicates that software on the device may be misconfigured or underperforming.",
+    "Normalization": "!BoundedRange(0,30)",
+    "Hidden": false,
+    "Unit": null,
+    "DataType": "integer",
+    "SourceType": 0,
+    "Type": 1,
+    "Measures": ["SoftwarePerformanceAnomaliesScore"],
+    "Children": [],
+    "InvestigationCategories": []
+  },
+  {
+    "Id": 45,
+    "Name": "OtherDisks",
+    "Title": "Non-System disk performance",
+    "Notes": "An indicator of non-system disk load and throughput.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": null,
+    "DataType": "integer",
+    "SourceType": 0,
+    "Type": 2,
+    "Measures": ["OtherDisksScore"],
+    "Children": [
+      {
+        "Metadata": {
+          "Id": 4,
+          "Name": "DiskOthersSplitIoPerSecond",
+          "Title": "Disk (others): Split I/O per second",
+          "Notes": "Scores the I/O operations that were broken into multiple requests across non-system disk(s). A lower score may indicate excessive disk fragmentation.",
+          "Normalization": "!BoundedRange(0,1)",
+          "Hidden": false,
+          "Unit": "ops/sec",
+          "DataType": "float(4)",
+          "SourceType": 0,
+          "Type": 1,
+          "Measures": ["DiskOthersSplitIoPerSecondScore"],
+          "Children": [],
+          "InvestigationCategories": []
+        },
+        "Weight": 0.333
+      },
+      {
+        "Metadata": {
+          "Id": 1,
+          "Name": "DiskOthersAverageQueueLength",
+          "Title": "Disk (others): Average queue length",
+          "Notes": "Scores the average queue length for non-system disk(s). A lower score indicates that these disk(s) are not keeping up with the I/O backlog.",
+          "Normalization": "!BoundedRange(0,0.5)",
+          "Hidden": false,
+          "Unit": null,
+          "DataType": "float(4)",
+          "SourceType": 0,
+          "Type": 1,
+          "Measures": ["DiskOthersAverageQueueLengthScore"],
+          "Children": [],
+          "InvestigationCategories": []
+        },
+        "Weight": 0.333
+      },
+      {
+        "Metadata": {
+          "Id": 2,
+          "Name": "DiskOthersAverageSecondsPerWrite",
+          "Title": "Disk (others): Average seconds per write",
+          "Notes": "Scores the average time taken for non-system disk(s) to perform a write. A lower score indicates that these disk(s) are taking too long to service write requests.",
+          "Normalization": "!BoundedRange(0,0.005)",
+          "Hidden": false,
+          "Unit": "secs/write",
+          "DataType": "float(5)",
+          "SourceType": 0,
+          "Type": 1,
+          "Measures": ["DiskOthersAverageSecondsPerWriteScore"],
+          "Children": [],
+          "InvestigationCategories": []
+        },
+        "Weight": 0.333
+      }
+    ],
+    "InvestigationCategories": []
+  },
+  {
+    "Id": 58,
+    "Name": "Experience",
+    "Title": "Experience",
+    "Notes": "A score that provides a weighted indicator of device performance, stability, responsiveness and user sentiment.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": null,
+    "DataType": "integer",
+    "SourceType": 0,
+    "Type": 2,
+    "Measures": ["ExperienceScore"],
+    "Children": [
+      {
+        "Metadata": {
+          "Id": 53,
+          "Name": "Performance",
+          "Title": "Performance",
+          "Notes": "A score that provides a weighted indicator of the load and throughput of processor, memory and disk resources.",
+          "Normalization": null,
+          "Hidden": false,
+          "Unit": null,
+          "DataType": "integer",
+          "SourceType": 0,
+          "Type": 2,
+          "Measures": ["PerformanceScore"],
+          "Children": [
+            {
+              "Metadata": {
+                "Id": 44,
+                "Name": "SystemDisks",
+                "Title": "System disk performance",
+                "Notes": "An indicator of system disk load and throughput.",
+                "Normalization": null,
+                "Hidden": false,
+                "Unit": null,
+                "DataType": "integer",
+                "SourceType": 0,
+                "Type": 2,
+                "Measures": ["SystemDisksScore"],
+                "Children": [
+                  {
+                    "Metadata": {
+                      "Id": 9,
+                      "Name": "DiskSystemSplitIoPerSecond",
+                      "Title": "Disk (system): Split I/O per second",
+                      "Notes": "Scores the I/O operations that were broken into multiple requests on the system disk. A lower score may indicate excessive disk fragmentation.",
+                      "Normalization": "!BoundedRange(0.05,5)",
+                      "Hidden": false,
+                      "Unit": "ops/sec",
+                      "DataType": "float(4)",
+                      "SourceType": 0,
+                      "Type": 1,
+                      "Measures": ["DiskSystemSplitIoPerSecondScore"],
+                      "Children": [],
+                      "InvestigationCategories": []
+                    },
+                    "Weight": 0.333
+                  },
+                  {
+                    "Metadata": {
+                      "Id": 6,
+                      "Name": "DiskSystemAverageQueueLength",
+                      "Title": "Disk (system): Average queue length",
+                      "Notes": "Scores the average queue length for the system disk. A lower score indicates that this disk is not keeping up with the I/O backlog.",
+                      "Normalization": "!BoundedRange(0,1)",
+                      "Hidden": false,
+                      "Unit": null,
+                      "DataType": "float(4)",
+                      "SourceType": 0,
+                      "Type": 1,
+                      "Measures": ["DiskSystemAverageQueueLengthScore"],
+                      "Children": [],
+                      "InvestigationCategories": []
+                    },
+                    "Weight": 0.333
+                  },
+                  {
+                    "Metadata": {
+                      "Id": 7,
+                      "Name": "DiskSystemAverageSecondsPerWrite",
+                      "Title": "Disk (system): Average seconds per write",
+                      "Notes": "Scores the average time taken for the system disk to perform a write. A lower score indicates that this disk is taking too long to service write requests.",
+                      "Normalization": "!BoundedRange(0,0.015)",
+                      "Hidden": false,
+                      "Unit": "secs/write",
+                      "DataType": "float(5)",
+                      "SourceType": 0,
+                      "Type": 1,
+                      "Measures": ["DiskSystemAverageSecondsPerWriteScore"],
+                      "Children": [],
+                      "InvestigationCategories": []
+                    },
+                    "Weight": 0.333
+                  }
+                ],
+                "InvestigationCategories": []
+              },
+              "Weight": 0.3
+            },
+            {
+              "Metadata": {
+                "Id": 46,
+                "Name": "CPU",
+                "Title": "CPU performance",
+                "Notes": "An indication of processor load and throughput.",
+                "Normalization": null,
+                "Hidden": false,
+                "Unit": null,
+                "DataType": "integer",
+                "SourceType": 0,
+                "Type": 2,
+                "Measures": ["CPUScore"],
+                "Children": [
+                  {
+                    "Metadata": {
+                      "Id": 19,
+                      "Name": "ProcessorQueueLength",
+                      "Title": "Processor: Queue length",
+                      "Notes": "Scores the CPU queue length (backlog of processing work). A lower score means that the CPU is not keeping up with the workload.",
+                      "Normalization": "!BoundedRange(0,2)",
+                      "Hidden": false,
+                      "Unit": null,
+                      "DataType": "float(2)",
+                      "SourceType": 0,
+                      "Type": 1,
+                      "Measures": ["ProcessorQueueLengthScore"],
+                      "Children": [],
+                      "InvestigationCategories": []
+                    },
+                    "Weight": 0.333
+                  },
+                  {
+                    "Metadata": {
+                      "Id": 18,
+                      "Name": "ProcessorInterruptTimePercent",
+                      "Title": "Processor: Percent interrupt time",
+                      "Notes": "Scores the amount of time the CPU spent servicing interrupts. A lower score may indicate faulty or misconfigured hardware/drivers.",
+                      "Normalization": "!BoundedRange(0.0025,1)",
+                      "Hidden": false,
+                      "Unit": "%",
+                      "DataType": "float(1)",
+                      "SourceType": 0,
+                      "Type": 1,
+                      "Measures": ["ProcessorInterruptTimePercentScore"],
+                      "Children": [],
+                      "InvestigationCategories": []
+                    },
+                    "Weight": 0.333
+                  },
+                  {
+                    "Metadata": {
+                      "Id": 20,
+                      "Name": "ProcessorTimePercent",
+                      "Title": "Processor: Processor time",
+                      "Notes": "Scores the CPU load. A lower score indicates that the CPU is fully loaded and additional processing power may be required.",
+                      "Normalization": "!BoundedRange(1,50)",
+                      "Hidden": false,
+                      "Unit": "%",
+                      "DataType": "float(1)",
+                      "SourceType": 0,
+                      "Type": 1,
+                      "Measures": ["ProcessorTimePercentScore"],
+                      "Children": [],
+                      "InvestigationCategories": []
+                    },
+                    "Weight": 0.333
+                  }
+                ],
+                "InvestigationCategories": []
+              },
+              "Weight": 0.3
+            },
+            {
+              "Metadata": {
+                "Id": 47,
+                "Name": "Memory",
+                "Title": "Memory performance",
+                "Notes": "A score that indicates memory load and system paging activity.",
+                "Normalization": null,
+                "Hidden": false,
+                "Unit": null,
+                "DataType": "integer",
+                "SourceType": 0,
+                "Type": 2,
+                "Measures": ["MemoryScore"],
+                "Children": [
+                  {
+                    "Metadata": {
+                      "Id": 11,
+                      "Name": "MemoryHardPageFaultsPerSecond",
+                      "Title": "Memory: Hard page faults",
+                      "Notes": "Scores the amount of memory pages that had to be read from disk-based storage. A lower score indicates this device is low on available physical memory.",
+                      "Normalization": "!BoundedRange(0,200)",
+                      "Hidden": false,
+                      "Unit": "faults/sec",
+                      "DataType": "float(2)",
+                      "SourceType": 0,
+                      "Type": 1,
+                      "Measures": ["MemoryHardPageFaultsPerSecondScore"],
+                      "Children": [],
+                      "InvestigationCategories": []
+                    },
+                    "Weight": 0.25
+                  },
+                  {
+                    "Metadata": {
+                      "Id": 12,
+                      "Name": "MemoryPageFileUsagePercent",
+                      "Title": "Memory: Page file usage",
+                      "Notes": "Scores the percentage of the page file that is in use. A lower score indicates more high page file use, which may mean the device is low on available physical memory.",
+                      "Normalization": "!Percentage",
+                      "Hidden": false,
+                      "Unit": "%",
+                      "DataType": "float(1)",
+                      "SourceType": 0,
+                      "Type": 1,
+                      "Measures": ["MemoryPageFileUsagePercentScore"],
+                      "Children": [],
+                      "InvestigationCategories": []
+                    },
+                    "Weight": 0.25
+                  },
+                  {
+                    "Metadata": {
+                      "Id": 14,
+                      "Name": "MemoryUsagePercent",
+                      "Title": "Memory: Physical memory usage",
+                      "Notes": "Scores the percentage of physical memory in use. A lower score indicates higher memory consumption, and therefore less available physical memory.",
+                      "Normalization": "!BoundedRange(20,100)",
+                      "Hidden": false,
+                      "Unit": "%",
+                      "DataType": "float(1)",
+                      "SourceType": 0,
+                      "Type": 1,
+                      "Measures": ["MemoryUsagePercentScore"],
+                      "Children": [],
+                      "InvestigationCategories": []
+                    },
+                    "Weight": 0.25
+                  },
+                  {
+                    "Metadata": {
+                      "Id": 30,
+                      "Name": "OsMemory",
+                      "Title": "Operating System: Memory access time",
+                      "Notes": "Scores the time taken to allocate, zero and free a block of memory. A lower score indicates that the operating system is slow to serve memory requests, which may affect application performance.",
+                      "Normalization": "!BoundedRange(0.00011,0.00133)",
+                      "Hidden": false,
+                      "Unit": "secs",
+                      "DataType": "float(6)",
+                      "SourceType": 0,
+                      "Type": 1,
+                      "Measures": ["OsMemoryScore"],
+                      "Children": [],
+                      "InvestigationCategories": []
+                    },
+                    "Weight": 0.25
+                  }
+                ],
+                "InvestigationCategories": []
+              },
+              "Weight": 0.3
+            },
+            {
+              "Metadata": {
+                "Id": 48,
+                "Name": "Network",
+                "Title": "Network",
+                "Notes": "The Network performance score indicates a measurement of local network stack performance, it doesn’t include external network consideration like latency. If this value is low you may wish to consider improving Network performance.",
+                "Normalization": null,
+                "Hidden": false,
+                "Unit": null,
+                "DataType": "integer",
+                "SourceType": 0,
+                "Type": 2,
+                "Measures": ["NetworkScore"],
+                "Children": [
+                  {
+                    "Metadata": {
+                      "Id": 36,
+                      "Name": "OsUDPSend",
+                      "Title": "Operating System: UDP send time",
+                      "Notes": "Scores the time taken to perform a basic loopback UDP send. A lower score may indicate problems with the operating system network stack.",
+                      "Normalization": "!BoundedRange(0.0000095,0.001)",
+                      "Hidden": true,
+                      "Unit": "secs",
+                      "DataType": "float(6)",
+                      "SourceType": 0,
+                      "Type": 1,
+                      "Measures": ["OsUDPSendScore"],
+                      "Children": [],
+                      "InvestigationCategories": []
+                    },
+                    "Weight": 0.333
+                  },
+                  {
+                    "Metadata": {
+                      "Id": 70,
+                      "Name": "NetworkOutputQueueLength",
+                      "Title": "Network: Output queue length",
+                      "Notes": "Length of the output packet queue.",
+                      "Normalization": "!BoundedRange(0,2)",
+                      "Hidden": false,
+                      "Unit": "packets",
+                      "DataType": "integer",
+                      "SourceType": 0,
+                      "Type": 1,
+                      "Measures": ["NetworkOutputQueueLengthScore"],
+                      "Children": [],
+                      "InvestigationCategories": ["Network"]
+                    },
+                    "Weight": 0.333
+                  },
+                  {
+                    "Metadata": {
+                      "Id": 73,
+                      "Name": "WirelessSignalQuality",
+                      "Title": "Network: Wireless signal quality",
+                      "Notes": "Wireless signal quality is a percentage value that represents the signal quality of the wireless network capability on the endpoint. A value of 100% is optimal, as the figure degrades it will proportionally reduce the network bandwidth of wireless networking.",
+                      "Normalization": "Percentage",
+                      "Hidden": false,
+                      "Unit": "%",
+                      "DataType": "integer",
+                      "SourceType": 0,
+                      "Type": 1,
+                      "Measures": ["WirelessSignalQualityScore"],
+                      "Children": [],
+                      "InvestigationCategories": ["Network"]
+                    },
+                    "Weight": 0.333
+                  }
+                ],
+                "InvestigationCategories": []
+              },
+              "Weight": 0.1
+            }
+          ],
+          "InvestigationCategories": []
+        },
+        "Weight": 0.2
+      },
+      {
+        "Metadata": {
+          "Id": 54,
+          "Name": "Stability",
+          "Title": "Stability",
+          "Notes": "An indication of the frequency of operating system and software crashes and hangs and service failures.",
+          "Normalization": null,
+          "Hidden": false,
+          "Unit": null,
+          "DataType": "integer",
+          "SourceType": 0,
+          "Type": 2,
+          "Measures": ["StabilityScore"],
+          "Children": [
+            {
+              "Metadata": {
+                "Id": 38,
+                "Name": "OsCrashes",
+                "Title": "Operating System: Crashes",
+                "Notes": "Scores the frequency of operating system crashes (Blue Screens, or unexpected shutdowns). A lower score indicates crash activity, which is likely to be caused by a faulty or misconfigured device drive.",
+                "Normalization": "!BoundedRange(0,2)",
+                "Hidden": false,
+                "Unit": "crashes/day",
+                "DataType": "integer",
+                "SourceType": 0,
+                "Type": 1,
+                "Measures": ["OsCrashesScore"],
+                "Children": [],
+                "InvestigationCategories": []
+              },
+              "Weight": 0.67
+            },
+            {
+              "Metadata": {
+                "Id": 39,
+                "Name": "OsServiceFailures",
+                "Title": "Operating System: Service Failures",
+                "Notes": "Scores the frequency of service failures (where a service fails to start or shutdown correctly). A lower score indicates problematic services which may need to be investigated.",
+                "Normalization": "!BoundedRange(0,10)",
+                "Hidden": false,
+                "Unit": "failures/day",
+                "DataType": "integer",
+                "SourceType": 0,
+                "Type": 1,
+                "Measures": ["OsServiceFailuresScore"],
+                "Children": [],
+                "InvestigationCategories": []
+              },
+              "Weight": 0.07
+            },
+            {
+              "Metadata": {
+                "Id": 41,
+                "Name": "SoftwareCrashes",
+                "Title": "Software: Crashes",
+                "Notes": "Scores the frequency of software crashes. A lower score indicates a high rate of crashes. The Devices screen Logs tab can assist with investigation of software crashes.",
+                "Normalization": "!BoundedRange(0,10)",
+                "Hidden": false,
+                "Unit": "crashes/day",
+                "DataType": "integer",
+                "SourceType": 0,
+                "Type": 1,
+                "Measures": ["SoftwareCrashesScore"],
+                "Children": [],
+                "InvestigationCategories": []
+              },
+              "Weight": 0.13
+            },
+            {
+              "Metadata": {
+                "Id": 42,
+                "Name": "SoftwareHangs",
+                "Title": "Software: Hangs",
+                "Notes": "Scores the frequency of software hangs (where an application becomes unresponsive). A lower score indicates a high rate of hangs.",
+                "Normalization": "!BoundedRange(0,3)",
+                "Hidden": false,
+                "Unit": "hangs/day",
+                "DataType": "integer",
+                "SourceType": 0,
+                "Type": 1,
+                "Measures": ["SoftwareHangsScore"],
+                "Children": [],
+                "InvestigationCategories": []
+              },
+              "Weight": 0.13
+            }
+          ],
+          "InvestigationCategories": []
+        },
+        "Weight": 0.3
+      },
+      {
+        "Metadata": {
+          "Id": 55,
+          "Name": "Responsiveness",
+          "Title": "Responsiveness",
+          "Notes": "An indication of the timeliness of operating system startup and system resource creation and availability.",
+          "Normalization": null,
+          "Hidden": false,
+          "Unit": null,
+          "DataType": "integer",
+          "SourceType": 0,
+          "Type": 2,
+          "Measures": ["ResponsivenessScore"],
+          "Children": [
+            {
+              "Metadata": {
+                "Id": 56,
+                "Name": "WindowsInternals",
+                "Title": "Windows internals",
+                "Notes": "An indication of the timeliness of Windows system resource creation and availability.",
+                "Normalization": null,
+                "Hidden": false,
+                "Unit": null,
+                "DataType": "integer",
+                "SourceType": 0,
+                "Type": 2,
+                "Measures": ["WindowsInternalsScore"],
+                "Children": [
+                  {
+                    "Metadata": {
+                      "Id": 49,
+                      "Name": "WindowsFilesystem",
+                      "Title": "Windows filesystem",
+                      "Notes": "A score that indicates file system and disk access speed.",
+                      "Normalization": null,
+                      "Hidden": false,
+                      "Unit": null,
+                      "DataType": "integer",
+                      "SourceType": 0,
+                      "Type": 2,
+                      "Measures": ["WindowsFilesystemScore"],
+                      "Children": [
+                        {
+                          "Metadata": {
+                            "Id": 23,
+                            "Name": "OsCreateFile",
+                            "Title": "Operating System: Create file time",
+                            "Notes": "Scores the time taken to create an empty, temporary file. A lower score indicates that the operating system may be underperforming in terms of basic file operations.",
+                            "Normalization": "!BoundedRange(0.00004,0.005)",
+                            "Hidden": false,
+                            "Unit": "secs",
+                            "DataType": "float(6)",
+                            "SourceType": 0,
+                            "Type": 1,
+                            "Measures": ["OsCreateFileScore"],
+                            "Children": [],
+                            "InvestigationCategories": []
+                          },
+                          "Weight": 0.333
+                        },
+                        {
+                          "Metadata": {
+                            "Id": 27,
+                            "Name": "OsDiskRand",
+                            "Title": "Operating System: Disk random access time",
+                            "Notes": "Scores the time taken to perform a random access disk operation on the system drive. A lower score indicates poor random disk access performance.",
+                            "Normalization": "!BoundedRange(0.00002,0.02)",
+                            "Hidden": false,
+                            "Unit": "secs",
+                            "DataType": "float(6)",
+                            "SourceType": 0,
+                            "Type": 1,
+                            "Measures": ["OsDiskRandScore"],
+                            "Children": [],
+                            "InvestigationCategories": []
+                          },
+                          "Weight": 0.333
+                        },
+                        {
+                          "Metadata": {
+                            "Id": 28,
+                            "Name": "OsDiskSeq",
+                            "Title": "Operating System: Disk sequential access time",
+                            "Notes": "Scores the time taken to perform a sequential access disk operation on the system drive. A lower score indicates poor sequential disk access performance.",
+                            "Normalization": "!BoundedRange(0.00002,0.01)",
+                            "Hidden": false,
+                            "Unit": "secs",
+                            "DataType": "float(6)",
+                            "SourceType": 0,
+                            "Type": 1,
+                            "Measures": ["OsDiskSeqScore"],
+                            "Children": [],
+                            "InvestigationCategories": []
+                          },
+                          "Weight": 0.333
+                        }
+                      ],
+                      "InvestigationCategories": []
+                    },
+                    "Weight": 0.333
+                  },
+                  {
+                    "Metadata": {
+                      "Id": 50,
+                      "Name": "WindowsRegistry",
+                      "Title": "Windows registry",
+                      "Notes": "An indication of Windows registry access speed.",
+                      "Normalization": null,
+                      "Hidden": false,
+                      "Unit": null,
+                      "DataType": "integer",
+                      "SourceType": 0,
+                      "Type": 2,
+                      "Measures": ["WindowsRegistryScore"],
+                      "Children": [
+                        {
+                          "Metadata": {
+                            "Id": 33,
+                            "Name": "OsRegReadHKLM",
+                            "Title": "Operating System: Registry read HKLM time",
+                            "Notes": "Scores the time taken to read from the HKLM Windows Registry hive. A lower score indicates poor registry read performance, which in turn may affect application performance.",
+                            "Normalization": "!BoundedRange(0.00000132,0.00028)",
+                            "Hidden": false,
+                            "Unit": "secs",
+                            "DataType": "float(6)",
+                            "SourceType": 0,
+                            "Type": 1,
+                            "Measures": ["OsRegReadHKLMScore"],
+                            "Children": [],
+                            "InvestigationCategories": []
+                          },
+                          "Weight": 0.333
+                        },
+                        {
+                          "Metadata": {
+                            "Id": 34,
+                            "Name": "OsRegWriteHKCU",
+                            "Title": "Operating System: Registry write HKCU time",
+                            "Notes": "Scores the time taken to write to the HKCU Windows Registry hive. A lower score indicates poor registry write performance, which in turn may affect application performance.",
+                            "Normalization": "!BoundedRange(0.0000245,0.0024)",
+                            "Hidden": false,
+                            "Unit": "secs",
+                            "DataType": "float(6)",
+                            "SourceType": 0,
+                            "Type": 1,
+                            "Measures": ["OsRegWriteHKCUScore"],
+                            "Children": [],
+                            "InvestigationCategories": []
+                          },
+                          "Weight": 0.333
+                        },
+                        {
+                          "Metadata": {
+                            "Id": 35,
+                            "Name": "OsRegWriteHKLM",
+                            "Title": "Operating System: Registry write HKLM time",
+                            "Notes": "Scores the time taken to write to the HKLM Windows Registry hive. A lower score indicates poor registry write performance, which in turn may affect application performance.",
+                            "Normalization": "!BoundedRange(0.0000035,0.001)",
+                            "Hidden": false,
+                            "Unit": "secs",
+                            "DataType": "float(6)",
+                            "SourceType": 0,
+                            "Type": 1,
+                            "Measures": ["OsRegWriteHKLMScore"],
+                            "Children": [],
+                            "InvestigationCategories": []
+                          },
+                          "Weight": 0.333
+                        }
+                      ],
+                      "InvestigationCategories": []
+                    },
+                    "Weight": 0.333
+                  },
+                  {
+                    "Metadata": {
+                      "Id": 52,
+                      "Name": "Processes",
+                      "Title": "Processes and threads",
+                      "Notes": "A score that indicates Windows process and thread creation and startup speed.",
+                      "Normalization": null,
+                      "Hidden": false,
+                      "Unit": null,
+                      "DataType": "integer",
+                      "SourceType": 0,
+                      "Type": 2,
+                      "Measures": ["ProcessesScore"],
+                      "Children": [
+                        {
+                          "Metadata": {
+                            "Id": 24,
+                            "Name": "OsCreateProcess",
+                            "Title": "Operating System: Create process time",
+                            "Notes": "Scores the time taken to create a new process. A lower score indicates that the operating system is taking a long time to create new processes.",
+                            "Normalization": "!BoundedRange(0.025,0.18)",
+                            "Hidden": false,
+                            "Unit": "secs",
+                            "DataType": "float(4)",
+                            "SourceType": 0,
+                            "Type": 1,
+                            "Measures": ["OsCreateProcessScore"],
+                            "Children": [],
+                            "InvestigationCategories": []
+                          },
+                          "Weight": 0.25
+                        },
+                        {
+                          "Metadata": {
+                            "Id": 25,
+                            "Name": "OsCreateThread",
+                            "Title": "Operating System: Create thread time",
+                            "Notes": "Scores the time taken to create a new thread within a process. A lower score indicates that the operating system is taking a long time to create new threads.",
+                            "Normalization": "!BoundedRange(0.00006,0.005)",
+                            "Hidden": false,
+                            "Unit": "secs",
+                            "DataType": "float(6)",
+                            "SourceType": 0,
+                            "Type": 1,
+                            "Measures": ["OsCreateThreadScore"],
+                            "Children": [],
+                            "InvestigationCategories": []
+                          },
+                          "Weight": 0.25
+                        },
+                        {
+                          "Metadata": {
+                            "Id": 32,
+                            "Name": "OsOpenHandle",
+                            "Title": "Operating System: OpenHandle time",
+                            "Notes": "Scores the time taken to acquire a basic operating system resource. A lower score indicates that applications may underperform because the operating system is slow to service resource requests.",
+                            "Normalization": "!BoundedRange(0.0000005,0.000244)",
+                            "Hidden": false,
+                            "Unit": "secs",
+                            "DataType": "float(6)",
+                            "SourceType": 0,
+                            "Type": 1,
+                            "Measures": ["OsOpenHandleScore"],
+                            "Children": [],
+                            "InvestigationCategories": []
+                          },
+                          "Weight": 0.25
+                        },
+                        {
+                          "Metadata": {
+                            "Id": 29,
+                            "Name": "OsLoadDLL",
+                            "Title": "Operating System: Load DLL time",
+                            "Notes": "Scores the time taken to load and unload a DLL in a process. A lower score indicates library loading is slow, which may affect the startup time of applications.",
+                            "Normalization": "!BoundedRange(0.0003,0.003)",
+                            "Hidden": false,
+                            "Unit": "secs",
+                            "DataType": "float(6)",
+                            "SourceType": 0,
+                            "Type": 1,
+                            "Measures": ["OsLoadDLLScore"],
+                            "Children": [],
+                            "InvestigationCategories": []
+                          },
+                          "Weight": 0.25
+                        }
+                      ],
+                      "InvestigationCategories": []
+                    },
+                    "Weight": 0.333
+                  }
+                ],
+                "InvestigationCategories": []
+              },
+              "Weight": 0.2
+            },
+            {
+              "Metadata": {
+                "Id": 57,
+                "Name": "Startup",
+                "Title": "System startup",
+                "Notes": "An indication of the timeliness of operating system startup.",
+                "Normalization": null,
+                "Hidden": false,
+                "Unit": null,
+                "DataType": "integer",
+                "SourceType": 0,
+                "Type": 2,
+                "Measures": ["StartupScore"],
+                "Children": [
+                  {
+                    "Metadata": {
+                      "Id": 22,
+                      "Name": "OsBootTimeSeconds",
+                      "Title": "Operating System: Boot time",
+                      "Notes": "Scores the time taken for the device to boot to the logon prompt. A lower score indicates a long boot up duration, which may affect user satisfaction.",
+                      "Normalization": "!BoundedRange(20,240)",
+                      "Hidden": false,
+                      "Unit": "secs",
+                      "DataType": "float(1)",
+                      "SourceType": 0,
+                      "Type": 1,
+                      "Measures": ["OsBootTimeSecondsScore"],
+                      "Children": [],
+                      "InvestigationCategories": ["BootAndLogin"]
+                    },
+                    "Weight": 1.0
+                  }
+                ],
+                "InvestigationCategories": []
+              },
+              "Weight": 0.3
+            },
+            {
+              "Metadata": {
+                "Id": 51,
+                "Name": "Desktop",
+                "Title": "Windows UI",
+                "Notes": "An indication of graphical window creation and operation speed.",
+                "Normalization": null,
+                "Hidden": false,
+                "Unit": null,
+                "DataType": "integer",
+                "SourceType": 0,
+                "Type": 2,
+                "Measures": ["DesktopScore"],
+                "Children": [
+                  {
+                    "Metadata": {
+                      "Id": 26,
+                      "Name": "OsCreateWindow",
+                      "Title": "Operating System: Create window time",
+                      "Notes": "Scores the time taken to generate an empty window. A lower score indicates poor Windows desktop performance, which may cause applications to appear unresponsive.",
+                      "Normalization": "!BoundedRange(0.00006,0.0018)",
+                      "Hidden": false,
+                      "Unit": "secs",
+                      "DataType": "float(6)",
+                      "SourceType": 0,
+                      "Type": 1,
+                      "Measures": ["OsCreateWindowScore"],
+                      "Children": [],
+                      "InvestigationCategories": []
+                    },
+                    "Weight": 0.5
+                  },
+                  {
+                    "Metadata": {
+                      "Id": 31,
+                      "Name": "OsMessageDispatch",
+                      "Title": "Operating System: Message dispatch time",
+                      "Notes": "Scores the time taken to dispatch and confirm processing of a windows message. A lower score indicates poor message processing throughput, which may affect application responsiveness.",
+                      "Normalization": "!BoundedRange(0.000003,0.00164)",
+                      "Hidden": false,
+                      "Unit": "secs",
+                      "DataType": "float(6)",
+                      "SourceType": 0,
+                      "Type": 1,
+                      "Measures": ["OsMessageDispatchScore"],
+                      "Children": [],
+                      "InvestigationCategories": []
+                    },
+                    "Weight": 0.5
+                  }
+                ],
+                "InvestigationCategories": []
+              },
+              "Weight": 0.5
+            }
+          ],
+          "InvestigationCategories": []
+        },
+        "Weight": 0.3
+      },
+      {
+        "Metadata": {
+          "Id": 59,
+          "Name": "Sentiment",
+          "Title": "User sentiment",
+          "Notes": "Users feeling or opinion of device performance, stability and responsiveness.",
+          "Normalization": null,
+          "Hidden": false,
+          "Unit": null,
+          "DataType": "integer",
+          "SourceType": 0,
+          "Type": 2,
+          "Measures": ["SentimentScore"],
+          "Children": [
+            {
+              "Metadata": {
+                "Id": 63,
+                "Name": "asdfasdf",
+                "Title": "asdfasdf",
+                "Notes": "asdfasdf",
+                "Normalization": null,
+                "Hidden": false,
+                "Unit": null,
+                "DataType": "integer",
+                "SourceType": 1,
+                "Type": 1,
+                "Measures": ["asdfasdfScore"],
+                "Children": [],
+                "InvestigationCategories": []
+              },
+              "Weight": 1.0
+            },
+            {
+              "Metadata": {
+                "Id": 64,
+                "Name": "hfg",
+                "Title": "hfg",
+                "Notes": "asdfasdf",
+                "Normalization": null,
+                "Hidden": false,
+                "Unit": null,
+                "DataType": "integer",
+                "SourceType": 1,
+                "Type": 1,
+                "Measures": ["hfgScore"],
+                "Children": [],
+                "InvestigationCategories": []
+              },
+              "Weight": 1.0
+            },
+            {
+              "Metadata": {
+                "Id": 65,
+                "Name": "fghgh",
+                "Title": "fghgh",
+                "Notes": "fdsfsd",
+                "Normalization": null,
+                "Hidden": false,
+                "Unit": null,
+                "DataType": "integer",
+                "SourceType": 1,
+                "Type": 1,
+                "Measures": ["fghghScore"],
+                "Children": [],
+                "InvestigationCategories": []
+              },
+              "Weight": 1.0
+            },
+            {
+              "Metadata": {
+                "Id": 66,
+                "Name": "sfdfsdf",
+                "Title": "sfdfsdf",
+                "Notes": "Does this work",
+                "Normalization": null,
+                "Hidden": false,
+                "Unit": null,
+                "DataType": "integer",
+                "SourceType": 1,
+                "Type": 1,
+                "Measures": ["sfdfsdfScore"],
+                "Children": [],
+                "InvestigationCategories": []
+              },
+              "Weight": 1.0
+            },
+            {
+              "Metadata": {
+                "Id": 67,
+                "Name": "dgfgdf",
+                "Title": "dgfgdf",
+                "Notes": "dasdas",
+                "Normalization": null,
+                "Hidden": false,
+                "Unit": null,
+                "DataType": "integer",
+                "SourceType": 1,
+                "Type": 1,
+                "Measures": ["dgfgdfScore"],
+                "Children": [],
+                "InvestigationCategories": []
+              },
+              "Weight": 1.0
+            },
+            {
+              "Metadata": {
+                "Id": 68,
+                "Name": "NewName",
+                "Title": "New Name",
+                "Notes": "Question Test",
+                "Normalization": null,
+                "Hidden": false,
+                "Unit": null,
+                "DataType": "integer",
+                "SourceType": 1,
+                "Type": 1,
+                "Measures": ["NewNameScore"],
+                "Children": [],
+                "InvestigationCategories": []
+              },
+              "Weight": 1.0
+            }
+          ],
+          "InvestigationCategories": []
+        },
+        "Weight": 0.2
+      }
+    ],
+    "InvestigationCategories": []
+  },
+  {
+    "Id": 62,
+    "Name": "UserSessionReactiveness",
+    "Title": "User: Session Reactiveness",
+    "Notes": "A score that indicates the reactiveness of the user session on a device by considering user wait time and responsiveness of foreground windows",
+    "Normalization": null,
+    "Hidden": true,
+    "Unit": null,
+    "DataType": "integer",
+    "SourceType": 1,
+    "Type": 2,
+    "Measures": ["UserSessionReactivenessScore"],
+    "Children": [
+      {
+        "Metadata": {
+          "Id": 60,
+          "Name": "UserWaitTime",
+          "Title": "User: User Wait Time",
+          "Notes": "A score that indicates the ratio between the user had to wait due to a busy system and their total interaction time.",
+          "Normalization": null,
+          "Hidden": true,
+          "Unit": null,
+          "DataType": "integer",
+          "SourceType": 1,
+          "Type": 2,
+          "Measures": ["UserWaitTimeScore"],
+          "Children": [],
+          "InvestigationCategories": []
+        },
+        "Weight": 0.3
+      },
+      {
+        "Metadata": {
+          "Id": 61,
+          "Name": "ForegroundMessageProcessingTime",
+          "Title": "User: Foreground Message Processing Time",
+          "Notes": "A score that indicates the responsiveness of the user foreground windows",
+          "Normalization": "!BoundedRange(0,2)",
+          "Hidden": true,
+          "Unit": null,
+          "DataType": "integer",
+          "SourceType": 1,
+          "Type": 1,
+          "Measures": ["ForegroundMessageProcessingTimeScore"],
+          "Children": [],
+          "InvestigationCategories": []
+        },
+        "Weight": 0.7
+      }
+    ],
+    "InvestigationCategories": []
+  },
+  {
+    "Id": 69,
+    "Name": "NetworkBroadcastRate",
+    "Title": "Network: Broadcast rate",
+    "Notes": "Network broadcast rate is defined as the sum of multicast packets that have been sent and received per second. It represents the total for all physical network interfaces on the endpoint.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "packets/sec",
+    "DataType": "integer",
+    "SourceType": 0,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["Network"]
+  },
+  {
+    "Id": 71,
+    "Name": "NetworkPacketRate",
+    "Title": "Network: Packet rate",
+    "Notes": "Network packet rate is defined as the sum of all TCP packets that have been sent and received per second. It represents a measure of network resource utilization on the endpoint.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "packets/sec",
+    "DataType": "integer",
+    "SourceType": 0,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["Network"]
+  },
+  {
+    "Id": 72,
+    "Name": "WirelessReceiveRate",
+    "Title": "Network: Wireless receive rate",
+    "Notes": "Wireless receive rate is the maximum possible link layer receive transfer speed that can be expected from the Wireless networking on the endpoint.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "bits/sec",
+    "DataType": "integer",
+    "SourceType": 0,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["Network"]
+  },
+  {
+    "Id": 74,
+    "Name": "WirelessTransmitRate",
+    "Title": "Network: Wireless transmit rate",
+    "Notes": "Wireless transmit rate is the maximum possible link layer send transfer speed that can be expected from the Wireless networking on the endpoint.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "bits/sec",
+    "DataType": "integer",
+    "SourceType": 0,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["Network"]
+  },
+  {
+    "Id": 75,
+    "Name": "NetworkNetRetransmitRate",
+    "Title": "Network: Net retransmit rate",
+    "Notes": "The TCP/IP stack retransmits a TCP segment in case an acknowledge from the recipient of the segment is not seen. This normally happens when the TCP segment is dropped in transit. This counters measures the rate of TCP segment (both IPv4 and IPv6) retransmissions done per second. A higher retransmission rate is indicative of a problem in the network causing network packet loss.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "packets/sec",
+    "DataType": "integer",
+    "SourceType": 0,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["Network"]
+  },
+  {
+    "Id": 76,
+    "Name": "NetworkUsageAverageUserLoggedIn",
+    "Title": "Network: Usage average user logged in",
+    "Notes": "This counter defines the average network bandwidth used on a device when a user is active on the device. If the user is not logged in or machine is idle (locked), then this value is sent empty.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": null,
+    "DataType": "integer",
+    "SourceType": 0,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["Network"]
+  },
+  {
+    "Id": 77,
+    "Name": "NetworkPacketsOutboundDiscarded",
+    "Title": "Network: Packets outbound discarded",
+    "Notes": "This counter defines the number of outgoing packets dropped by the network adapter. This can happen if there is no outbound transmit buffers available. This situation can occur if the data to transmit is high as compared to available transmit bandwidth.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": null,
+    "DataType": "integer",
+    "SourceType": 0,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["Network"]
+  },
+  {
+    "Id": 78,
+    "Name": "NetworkPacketsOutboundErrors",
+    "Title": "Network: Packets outbound errors",
+    "Notes": "This indicates the number of outgoing packets dropped by the network adapter due to errors at physical layer, like loss of carrier during transmission.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": null,
+    "DataType": "integer",
+    "SourceType": 0,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["Network"]
+  },
+  {
+    "Id": 79,
+    "Name": "NetworkPacketsReceivedDiscarded",
+    "Title": "Network: Packets received discarded",
+    "Notes": "This counter gives the number of incoming packets dropped due to non availability of receive buffers to store the incoming frames. This indicates that the rate of incoming packets is higher than the rate of packets being consumed by the system from the receive buffers.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": null,
+    "DataType": "integer",
+    "SourceType": 0,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["Network"]
+  },
+  {
+    "Id": 80,
+    "Name": "NetworkPacketsReceivedErrors",
+    "Title": "Network: Packets received errors",
+    "Notes": "This counter indicates the number of packets dropped by the network adapter due to various errors at physical layer, like CRC errors, MTU error, frame too long, invalid frame length etc.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": null,
+    "DataType": "integer",
+    "SourceType": 0,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["Network"]
+  },
+  {
+    "Id": 81,
+    "Name": "NetworkUtilizationPercent",
+    "Title": "Network: Bandwidth utilization",
+    "Notes": "Bandwidth saturation occurs when all a circuits available bandwidth in a given direction is being utilized by a large upload or download; this results high latency and performance issues as subsequent packets start to buffer, eventually timing out and displaying symptoms such as slow speeds and packet loss.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "%",
+    "DataType": "integer",
+    "SourceType": 0,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["Network"]
+  },
+  {
+    "Id": 82,
+    "Name": "BootMachineGroupPolicyProcessingTimeSeconds",
+    "Title": "Boot Performance: Machine Group Policy Processing Time Seconds",
+    "Notes": "Time taken at boot time to apply Machine Group Policy settings. In the unlikely case when the Boot Group Policy event is not logged by Windows, we pick the closest periodic or manual Machine Group Policy Processing event to the Boot time. ",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "seconds",
+    "DataType": "float(4)",
+    "SourceType": 0,
+    "Type": 1,
+    "Measures": ["BootMachineGroupPolicyProcessingTimeSecondsScore"],
+    "Children": [],
+    "InvestigationCategories": ["BootAndLogin"]
+  },
+  {
+    "Id": 83,
+    "Name": "BootUserGroupPolicyProcessingTimeSeconds",
+    "Title": "Boot Performance: User Group Policy Processing Time Seconds",
+    "Notes": "Time taken at boot time to apply User Group Policy settings. In the unlikely case when the Boot Group Policy event is not logged by Windows, we pick the closest periodic or manual User Group Policy Processing event to the Boot time. ",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "seconds",
+    "DataType": "float(4)",
+    "SourceType": 0,
+    "Type": 1,
+    "Measures": ["BootUserGroupPolicyProcessingTimeSecondsScore"],
+    "Children": [],
+    "InvestigationCategories": ["BootAndLogin"]
+  },
+  {
+    "Id": 84,
+    "Name": "BootMainPathBootTimeSeconds",
+    "Title": "Boot Performance: Main Path Boot Time Seconds",
+    "Notes": "Main path boot time starts when you see the Start Windows splash screen and ends when the desktop appears.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "seconds",
+    "DataType": "float(4)",
+    "SourceType": 0,
+    "Type": 1,
+    "Measures": ["BootMainPathBootTimeSecondsScore"],
+    "Children": [],
+    "InvestigationCategories": ["BootAndLogin"]
+  },
+  {
+    "Id": 85,
+    "Name": "BootPostBootTimeSeconds",
+    "Title": "Boot Performance: Post Boot Time Seconds",
+    "Notes": "Post boot time starts when the desktop appears. During this time, services and application may be starting but it is not considered complete until the system has reached a certain idle state.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "seconds",
+    "DataType": "float(4)",
+    "SourceType": 0,
+    "Type": 1,
+    "Measures": ["BootPostBootTimeSecondsScore"],
+    "Children": [],
+    "InvestigationCategories": ["BootAndLogin"]
+  },
+  {
+    "Id": 86,
+    "Name": "BootStartupAppsTimeSeconds",
+    "Title": "Boot Performance: Startup Apps Time Seconds",
+    "Notes": "Shows the combined \"CPU at start-up\" time for all application under the 'Startup' tab in Windows Task Manager.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "seconds",
+    "DataType": "float(4)",
+    "SourceType": 0,
+    "Type": 1,
+    "Measures": ["BootStartupAppsTimeSecondsScore"],
+    "Children": [],
+    "InvestigationCategories": ["BootAndLogin"]
+  },
+  {
+    "Id": 87,
+    "Name": "CrashesSum",
+    "Title": "Software: Total crashes",
+    "Notes": "The total number of software crashes for the application.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "total crashes",
+    "DataType": "integer",
+    "SourceType": 2,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["CrashesAndHangs", "Software"]
+  },
+  {
+    "Id": 88,
+    "Name": "HandleCount",
+    "Title": "Software: Handles",
+    "Notes": "The average number of handles in use by the application.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "handles",
+    "DataType": "integer",
+    "SourceType": 2,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["Software"]
+  },
+  {
+    "Id": 89,
+    "Name": "HangsSum",
+    "Title": "Software: Total hangs",
+    "Notes": "The total number of software hangs for the application.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "total hangs",
+    "DataType": "integer",
+    "SourceType": 2,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["CrashesAndHangs", "Software"]
+  },
+  {
+    "Id": 90,
+    "Name": "InstanceCount",
+    "Title": "Software: Instances",
+    "Notes": "The average number of application instances.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "instances",
+    "DataType": "integer",
+    "SourceType": 2,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["Software"]
+  },
+  {
+    "Id": 91,
+    "Name": "PerformanceAnomaliesSum",
+    "Title": "Software: Total performance anomalies",
+    "Notes": "The total number of performance anomalies detected for the application.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "total anomalies",
+    "DataType": "integer",
+    "SourceType": 2,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["Software"]
+  },
+  {
+    "Id": 92,
+    "Name": "SensitivityImpactPercent",
+    "Title": "Software: Sensitivity impact",
+    "Notes": "How sensitive this application appears to be in relation to operating system activity. A higher value means that this application has been seen to be consuming more CPU resources when the operating system itself is working harder, which may adversely affect the performance of the device overall (the software is “getting in the way” of the operating system). This behavior is typically seen in agent-based software which hooks in to the operating system, such as anti-virus and anti-malware products, or other similar security/monitoring software.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "%",
+    "DataType": "integer",
+    "SourceType": 2,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["Software"]
+  },
+  {
+    "Id": 93,
+    "Name": "SoftwareDeviceCount",
+    "Title": "Software: Total devices",
+    "Notes": "The total number of devices reporting performance data for the application.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "total devices",
+    "DataType": "integer",
+    "SourceType": 2,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["Software"]
+  },
+  {
+    "Id": 94,
+    "Name": "IoReadKilobytesPerSecond",
+    "Title": "Disk: Kilobytes read per second",
+    "Notes": "The average number of kilobytes read per second for the application.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "kilobytes/sec",
+    "DataType": "integer",
+    "SourceType": 2,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["Software"]
+  },
+  {
+    "Id": 95,
+    "Name": "IoWriteKilobytesPerSecond",
+    "Title": "Disk: Kilobytes written per second",
+    "Notes": "The average number of kilobytes written per second for the application.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "kilobytes/sec",
+    "DataType": "integer",
+    "SourceType": 2,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["Software"]
+  },
+  {
+    "Id": 96,
+    "Name": "MemoryUsagePhysicalKilobytes",
+    "Title": "Memory: Physical memory usage",
+    "Notes": "The amount of physical memory in use by the application.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "kilobytes",
+    "DataType": "integer",
+    "SourceType": 2,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["Software"]
+  },
+  {
+    "Id": 97,
+    "Name": "MemoryUsageVirtualKilobytes",
+    "Title": "Memory: Virtual memory usage",
+    "Notes": "The amount of virtual memory in use by the application.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "kilobytes",
+    "DataType": "integer",
+    "SourceType": 2,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["Software"]
+  },
+  {
+    "Id": 98,
+    "Name": "ProcessorTimeSecondsPerSecond",
+    "Title": "Processor: Processor time seconds",
+    "Notes": "The average number of CPU seconds (amount of processor work) per second for the application. A value of 1 indicates that a single CPU core was entirely busy for a second.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "secs",
+    "DataType": "float(4)",
+    "SourceType": 2,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["Software"]
+  },
+  {
+    "Id": 99,
+    "Name": "SoftwareProcessorTimePercent",
+    "Title": "Processor: Process time",
+    "Notes": "The average CPU load generated by the application.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "percentage",
+    "DataType": "float(4)",
+    "SourceType": 2,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["Software"]
+  },
+  {
+    "Id": 100,
+    "Name": "Software_DiskReadIops",
+    "Title": "Disk: Disk read Iops",
+    "Notes": "Average number of IO read operations per second for the application.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "Iops",
+    "DataType": "integer",
+    "SourceType": 2,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["Software"]
+  },
+  {
+    "Id": 101,
+    "Name": "Software_DiskWriteIops",
+    "Title": "Disk: Disk write Iops",
+    "Notes": "Average number of IO write operations per second the application.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "Iops",
+    "DataType": "integer",
+    "SourceType": 2,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["Software"]
+  },
+  {
+    "Id": 102,
+    "Name": "Software_NetworkBytesReceivedPerSecond",
+    "Title": "Network: Bytes received per second",
+    "Notes": "The average number of bytes received per second across all network adapters for the application.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "bytes/sec",
+    "DataType": "integer",
+    "SourceType": 2,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["Software"]
+  },
+  {
+    "Id": 103,
+    "Name": "Software_NetworkBytesSentPerSecond",
+    "Title": "Network: Bytes sent per second",
+    "Notes": "The average number of bytes sent per second across all network adapters for the application.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "bytes/sec",
+    "DataType": "integer",
+    "SourceType": 2,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["Software"]
+  },
+  {
+    "Id": 104,
+    "Name": "Software_NetworkBytesExchangedPerSecond",
+    "Title": "Network: Bytes exchange per second",
+    "Notes": "The average number of bytes exchanged per second across all network adapters for the application.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "bytes/sec",
+    "DataType": "integer",
+    "SourceType": 2,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["Software"]
+  },
+  {
+    "Id": 105,
+    "Name": "Software_NetworkTotalDataReceivedMegabytes",
+    "Title": "Network: Total megabytes received",
+    "Notes": "The total megabytes received across all network adapters for the application.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "megabytes",
+    "DataType": "integer",
+    "SourceType": 2,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["Software"]
+  },
+  {
+    "Id": 106,
+    "Name": "Software_NetworkTotalDataSentMegabytes",
+    "Title": "Network: Total megabytes sent",
+    "Notes": "The total megabytes sent across all network adapters for the application.",
+    "Normalization": null,
+    "Hidden": false,
+    "Unit": "megabytes",
+    "DataType": "integer",
+    "SourceType": 2,
+    "Type": 0,
+    "Measures": [],
+    "Children": [],
+    "InvestigationCategories": ["Software"]
+  }
+]

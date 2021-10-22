@@ -1,0 +1,281 @@
+[
+  {
+    "Name": "SystemDisks",
+    "DataType": "MetricScore",
+    "Entity": "Device",
+    "Title": "System disk performance",
+    "Unit": null,
+    "Normalization": null,
+    "Formatting": null
+  },
+  {
+    "Name": "DiskSystemSplitIoPerSecond",
+    "DataType": "MetricRaw",
+    "Entity": "Device",
+    "Title": "Disk (system): Split I/O per second",
+    "Unit": "ops/sec",
+    "Normalization": null,
+    "Formatting": "float(4)"
+  },
+  {
+    "Name": "DiskSystemSplitIoPerSecond",
+    "DataType": "MetricScore",
+    "Entity": "Device",
+    "Title": "Disk (system): Split I/O per second",
+    "Unit": "ops/sec",
+    "Normalization": "!BoundedRange(0.05,5)",
+    "Formatting": null
+  },
+  {
+    "Name": "DiskSystemAverageQueueLength",
+    "DataType": "MetricRaw",
+    "Entity": "Device",
+    "Title": "Disk (system): Average queue length",
+    "Unit": null,
+    "Normalization": null,
+    "Formatting": "float(4)"
+  },
+  {
+    "Name": "DiskSystemAverageQueueLength",
+    "DataType": "MetricScore",
+    "Entity": "Device",
+    "Title": "Disk (system): Average queue length",
+    "Unit": null,
+    "Normalization": "!BoundedRange(0,1)",
+    "Formatting": null
+  },
+  {
+    "Name": "DiskSystemAverageSecondsPerWrite",
+    "DataType": "MetricRaw",
+    "Entity": "Device",
+    "Title": "Disk (system): Average seconds per write",
+    "Unit": "secs/write",
+    "Normalization": null,
+    "Formatting": "float(5)"
+  },
+  {
+    "Name": "DiskSystemAverageSecondsPerWrite",
+    "DataType": "MetricScore",
+    "Entity": "Device",
+    "Title": "Disk (system): Average seconds per write",
+    "Unit": "secs/write",
+    "Normalization": "!BoundedRange(0,0.015)",
+    "Formatting": null
+  },
+  {
+    "Name": "CPU",
+    "DataType": "MetricScore",
+    "Entity": "Device",
+    "Title": "CPU performance",
+    "Unit": null,
+    "Normalization": null,
+    "Formatting": null
+  },
+  {
+    "Name": "ProcessorQueueLength",
+    "DataType": "MetricRaw",
+    "Entity": "Device",
+    "Title": "Processor: Queue length",
+    "Unit": null,
+    "Normalization": null,
+    "Formatting": "float(2)"
+  },
+  {
+    "Name": "ProcessorQueueLength",
+    "DataType": "MetricScore",
+    "Entity": "Device",
+    "Title": "Processor: Queue length",
+    "Unit": null,
+    "Normalization": "!BoundedRange(0,2)",
+    "Formatting": null
+  },
+  {
+    "Name": "ProcessorInterruptTimePercent",
+    "DataType": "MetricRaw",
+    "Entity": "Device",
+    "Title": "Processor: Percent interrupt time",
+    "Unit": "%",
+    "Normalization": null,
+    "Formatting": "float(1)"
+  },
+  {
+    "Name": "ProcessorInterruptTimePercent",
+    "DataType": "MetricScore",
+    "Entity": "Device",
+    "Title": "Processor: Percent interrupt time",
+    "Unit": "%",
+    "Normalization": "!BoundedRange(0.0025,1)",
+    "Formatting": null
+  },
+  {
+    "Name": "ProcessorTimePercent",
+    "DataType": "MetricRaw",
+    "Entity": "Device",
+    "Title": "Processor: Processor time",
+    "Unit": "%",
+    "Normalization": null,
+    "Formatting": "float(1)"
+  },
+  {
+    "Name": "ProcessorTimePercent",
+    "DataType": "MetricScore",
+    "Entity": "Device",
+    "Title": "Processor: Processor time",
+    "Unit": "%",
+    "Normalization": "!BoundedRange(1,50)",
+    "Formatting": null
+  },
+  {
+    "Name": "Memory",
+    "DataType": "MetricScore",
+    "Entity": "Device",
+    "Title": "Memory performance",
+    "Unit": null,
+    "Normalization": null,
+    "Formatting": null
+  },
+  {
+    "Name": "MemoryHardPageFaultsPerSecond",
+    "DataType": "MetricRaw",
+    "Entity": "Device",
+    "Title": "Memory: Hard page faults",
+    "Unit": "faults/sec",
+    "Normalization": null,
+    "Formatting": "float(2)"
+  },
+  {
+    "Name": "MemoryHardPageFaultsPerSecond",
+    "DataType": "MetricScore",
+    "Entity": "Device",
+    "Title": "Memory: Hard page faults",
+    "Unit": "faults/sec",
+    "Normalization": "!BoundedRange(0,200)",
+    "Formatting": null
+  },
+  {
+    "Name": "MemoryPageFileUsagePercent",
+    "DataType": "MetricRaw",
+    "Entity": "Device",
+    "Title": "Memory: Page file usage",
+    "Unit": "%",
+    "Normalization": null,
+    "Formatting": "float(1)"
+  },
+  {
+    "Name": "MemoryPageFileUsagePercent",
+    "DataType": "MetricScore",
+    "Entity": "Device",
+    "Title": "Memory: Page file usage",
+    "Unit": "%",
+    "Normalization": "!Percentage",
+    "Formatting": null
+  },
+  {
+    "Name": "MemoryUsagePercent",
+    "DataType": "MetricRaw",
+    "Entity": "Device",
+    "Title": "Memory: Physical memory usage",
+    "Unit": "%",
+    "Normalization": null,
+    "Formatting": "float(1)"
+  },
+  {
+    "Name": "MemoryUsagePercent",
+    "DataType": "MetricScore",
+    "Entity": "Device",
+    "Title": "Memory: Physical memory usage",
+    "Unit": "%",
+    "Normalization": "!BoundedRange(20,100)",
+    "Formatting": null
+  },
+  {
+    "Name": "OsMemory",
+    "DataType": "MetricRaw",
+    "Entity": "Device",
+    "Title": "Operating System: Memory access time",
+    "Unit": "secs",
+    "Normalization": null,
+    "Formatting": "float(6)"
+  },
+  {
+    "Name": "OsMemory",
+    "DataType": "MetricScore",
+    "Entity": "Device",
+    "Title": "Operating System: Memory access time",
+    "Unit": "secs",
+    "Normalization": "!BoundedRange(0.00011,0.00133)",
+    "Formatting": null
+  },
+  {
+    "Name": "Network",
+    "DataType": "MetricScore",
+    "Entity": "Device",
+    "Title": "Network",
+    "Unit": null,
+    "Normalization": null,
+    "Formatting": null
+  },
+  {
+    "Name": "OsUDPSend",
+    "DataType": "MetricRaw",
+    "Entity": "Device",
+    "Title": "Operating System: UDP send time",
+    "Unit": "secs",
+    "Normalization": null,
+    "Formatting": "float(6)"
+  },
+  {
+    "Name": "OsUDPSend",
+    "DataType": "MetricScore",
+    "Entity": "Device",
+    "Title": "Operating System: UDP send time",
+    "Unit": "secs",
+    "Normalization": "!BoundedRange(0.0000095,0.001)",
+    "Formatting": null
+  },
+  {
+    "Name": "NetworkOutputQueueLength",
+    "DataType": "MetricRaw",
+    "Entity": "Device",
+    "Title": "Network: Output queue length",
+    "Unit": "packets",
+    "Normalization": null,
+    "Formatting": "integer"
+  },
+  {
+    "Name": "NetworkOutputQueueLength",
+    "DataType": "MetricScore",
+    "Entity": "Device",
+    "Title": "Network: Output queue length",
+    "Unit": "packets",
+    "Normalization": "!BoundedRange(0,2)",
+    "Formatting": null
+  },
+  {
+    "Name": "WirelessSignalQuality",
+    "DataType": "MetricRaw",
+    "Entity": "Device",
+    "Title": "Network: Wireless signal quality",
+    "Unit": "%",
+    "Normalization": null,
+    "Formatting": "integer"
+  },
+  {
+    "Name": "WirelessSignalQuality",
+    "DataType": "MetricScore",
+    "Entity": "Device",
+    "Title": "Network: Wireless signal quality",
+    "Unit": "%",
+    "Normalization": "Percentage",
+    "Formatting": null
+  },
+  {
+    "Name": "Performance",
+    "DataType": "MetricScore",
+    "Entity": "Device",
+    "Title": "Performance",
+    "Unit": null,
+    "Normalization": null,
+    "Formatting": null
+  }
+]

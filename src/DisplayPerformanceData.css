@@ -1,0 +1,31 @@
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    background-color: light-grey;
+}
+
+li {
+    flex-direction: row;
+    width:20%;
+    height: 100px;
+    margin: 20px;
+    align-items: center;
+    overflow-y: auto;
+    text-align: left;
+    background-color:bisque
+}
+
+.heading {
+  text-align: center;
+  font-weight: bold;
+  background-color:antiquewhite;
+  justify-content: center;
+  height: 50px;
+  line-height: 50px;
+}
+
