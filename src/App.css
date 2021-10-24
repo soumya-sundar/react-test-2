@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  height: 100%;
 }
 
 
@@ -12,5 +13,26 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.container {
+  display: block;
+  height: calc(100vh - 120px);
+  overflow-y: scroll;
+}
+
+footer {
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+  background-color: #282c34;
+  color: white;
+  bottom: 0;
+}
+
+footer>p {
+  padding-right:20px;
 }
 

@@ -5,11 +5,14 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-          Display Performance Data
+        Performance Data
       </header>
-      <section>
+      <section className="container">
         <DisplayPerformanceData />
       </section>
+      <footer>
+        <p>Contact: soumya-sundar @GitHub.com</p>
+      </footer>
     </div>
   );
 }
